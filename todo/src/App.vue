@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div >
+  <button v-on:click="onClick()">click</button>
+    {{ clickResult }}
+  <br>
+  <input v-on:change="onChange($event)" placeholder="change"> <!-- $eventを使ってイベントオブジェクトを渡す -->
+    {{ changeResult }}
+  <br>
+  <input @input="onInput($event)" placeholder="input">
+    {{ inputResult }}
+  <br>
+  <input @keyup="onKeyup($event)" placeholder="keyup">
+    {{ keyupResult }}
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data () {
+    return {
+      clickResult: "", // 空文字の設定
+      changeResult: "",
+      inputResult: "",
+      keyupResult: ""
+    }
+  },
+  methods: {
+    onClick() {
+      this.clickResult = "clicked"
+    },
+    onChange(e) { // 引数（e）でイベントオブジェクトを参照可能
+      this.changeResult = e.target.value;
+    },
+    onInput(e) {
+      this.inputResult = e.target.value;
+    },
+    onKeyup(e) {
+      this.keyupResult = e.target.value;
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
