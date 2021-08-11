@@ -18,7 +18,9 @@ export default {
   methods: {
     addTodo() {
       if(this.newTodo ==='') return;
-      this.$emit('add', this.newTodo);
+      const todos = JSON.parse(localStorage.getItem('todos')) || [];
+      todos.push(this.newTodo);
+      localStorage.setItem('todos', JSON.stringify(todos));
       this.newTodo = '';
     }
   }

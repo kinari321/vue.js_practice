@@ -12,10 +12,18 @@
 
 <script>
 export default {
-  props:['todos'],
+  data () {
+    return{
+      todos: []
+    }
+  },
+  created () {
+    this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+  },
   methods: {
-    deleteTodo(i) {
-      this.$emit('delete', i); // JSのspliceメソッドでデータの削除
+    deleteTodo (i) {
+      this.todos.splice(i, 1);
+      localStorage.setItem('todos', JSON.stringify(this.todos));
     }
   }
 }
