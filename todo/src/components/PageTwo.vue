@@ -12,6 +12,12 @@ export default {
     toPageOne() {
       this.$router.push('/');
     }
+  },
+  created() {
+    alert("PageTwo created!");
+  },
+  destroyed() {
+    alert("PageTwo destroyed!");
   }
 }
 </script>
