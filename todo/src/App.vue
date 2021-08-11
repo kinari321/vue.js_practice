@@ -1,16 +1,16 @@
 <template>
   <div >
-  <button v-on:click="onClick()">click</button>
-    {{ clickResult }}
-  <br>
-  <input v-on:change="onChange($event)" placeholder="change"> <!-- $eventを使ってイベントオブジェクトを渡す -->
+  <input v-bind:value="changeResult" v-on:change="onChange($event)" placeholder="change"> <!-- v-bind:valueに初期値 -->
     {{ changeResult }}
   <br>
-  <input @input="onInput($event)" placeholder="input">
+  <input v-bind:value="inputResult" @input="onInput($event)" placeholder="input">
     {{ inputResult }}
   <br>
-  <input @keyup="onKeyup($event)" placeholder="keyup">
+  <input v-bind:value="keyupResult" @keyup="onKeyup($event)" placeholder="keyup">
     {{ keyupResult }}
+  <br>
+  <input v-model="vmodelResult" placeholder="v-model">
+    {{ vmodelResult }}
   </div>
 </template>
 
@@ -18,16 +18,13 @@
 export default {
   data () {
     return {
-      clickResult: "", // 空文字の設定
-      changeResult: "",
-      inputResult: "",
-      keyupResult: ""
+      changeResult: "change default value", // 初期値
+      inputResult: "input default value",
+      keyupResult: "keyup default value",
+      vmodelResult: "vmodel default value"
     }
   },
   methods: {
-    onClick() {
-      this.clickResult = "clicked"
-    },
     onChange(e) { // 引数（e）でイベントオブジェクトを参照可能
       this.changeResult = e.target.value;
     },
