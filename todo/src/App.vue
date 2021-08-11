@@ -1,5 +1,5 @@
 <template>
   <router-view></router-view>
-  <!-- router-viewは動的動的コンポーネント -->
+  <!-- router-viewは動的コンポーネント -->
 </template>
 
