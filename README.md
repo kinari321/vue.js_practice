@@ -8,3 +8,6 @@
 
 ### udemy-vuejs
 - 参照：[超Vue.js 2 完全パック (Vue Router, Vuex含む)](https://www.udemy.com/course/vue-js-complete-guide/)
+
+### todo
+- 参照：[Amazon.co.jp: Vue.jsでTodoアプリを作ってみよう](https://www.amazon.co.jp/Vue-js%E3%81%A7Todo%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86-kenpapa-ebook/dp/B07JLBB1V9/ref=sr_1_7?__mk_ja_JP=%E3%82%AB%E3%82%BF%E3%82%AB%E3%83%8A&dchild=1&keywords=vue&qid=1628650408&refinements=p_n_feature_nineteen_browse-bin%3A3169286051&rnid=3169285051&s=digital-text&sr=1-7)
