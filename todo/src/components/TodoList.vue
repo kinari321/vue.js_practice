@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button v-on:click="addTodo"></button>
     <h5>Todo List</h5>
     <ul>
        <li v-for="(todo, i) in todos" v-bind:key="i">  <!-- リスト表示。keyにはindexを使用 -->
@@ -12,18 +13,22 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return{
       todos: []
     }
   },
-  created () {
-    this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+  created() {
+    // this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+    this.todos = JSON.parse(localStorage.getItem('todos' || "null"));
   },
   methods: {
-    deleteTodo (i) {
+    deleteTodo(i) {
       this.todos.splice(i, 1);
-      localStorage.setItem('todos', JSON.stringify(this.todos));
+        localStorage.setItem('todos', JSON.stringify(this.todos));
+    },
+    addTodo() {
+      this.$router.push('/todos/add');
     }
   }
 }

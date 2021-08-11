@@ -1,10 +1,9 @@
 <template>
   <div>
-    <h3>My Todo</h3>
+    <router-link to="/">Back</router-link>
+    <br>
     <input v-model="newTodo" placeholder="Input here...">
-    <!-- v-modelで双方向データバインディング -->
     <button v-on:click="addTodo()">ADD</button>
-
   </div>
 </template>
 
@@ -18,10 +17,12 @@ export default {
   methods: {
     addTodo() {
       if(this.newTodo ==='') return;
-      const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        // const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        const todos = JSON.parse(localStorage.getItem(todos || "null"));
       todos.push(this.newTodo);
-      localStorage.setItem('todos', JSON.stringify(todos));
+        localStorage.setItem('todos', JSON.stringify(todos));
       this.newTodo = '';
+      this.$router.push('/');
     }
   }
 }

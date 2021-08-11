@@ -1,18 +1,6 @@
 <template>
   <div>
-    <todo-form></todo-form>
-    <todo-list></todo-list>
+    <h3>My Todo</h3>
+    <router-view></router-view>
   </div>
 </template>
-
-<script>
-import TodoForm from './components/TodoForm'
-import TodoList from './components/TodoList'
-
-export default {
-  components: {
-    'todo-form': TodoForm,
-    'todo-list': TodoList
-  }
-}
-</script>
