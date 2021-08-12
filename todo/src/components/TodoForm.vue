@@ -17,13 +17,12 @@ export default {
   methods: {
     addTodo() {
       if(this.newTodo ==='') return;
-        // const todos = JSON.parse(localStorage.getItem('todos')) || [];
-        const todos = JSON.parse(localStorage.getItem(todos || "null"));
+        const todos = JSON.parse(localStorage.getItem('todos')) || [];
+        // const todos = JSON.parse(localStorage.getItem(todos || "null"));
       todos.push(this.newTodo);
         localStorage.setItem('todos', JSON.stringify(todos));
       this.newTodo = '';
       this.$router.push('/');
     }
   }
-}
 </script>
