@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button v-on:click="addTodo"></button>
+    <button v-on:click="addTodo">ADD</button>
     <h5>Todo List</h5>
     <ul>
        <li v-for="(todo,i) in todos" v-bind:key="i">
