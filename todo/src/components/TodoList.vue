@@ -2,7 +2,7 @@
   <div>
     <h5>Todo List</h5>
     <ul>
-       <li v-for="(todo, i) in todos" v-bind:key="i">  <!-- リスト表示。keyにはindexを使用 -->
+       <li v-for="(todo,i) in todos" v-bind:key="i">
         {{ todo }}
         <button v-on:click="deleteTodo(i)">DEL</button>
       </li>
@@ -11,6 +11,9 @@
 </template>
 
 <script>
+console.log(window.localStorage)
+// localStorage.clear()
+
 export default {
   data () {
     return{
@@ -18,7 +21,7 @@ export default {
     }
   },
   created () {
-    this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+    this.todos = JSON.parse(localStorage.getItem('todos'))||[];  //ここ！！！
   },
   methods: {
     deleteTodo (i) {

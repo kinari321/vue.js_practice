@@ -15,14 +15,14 @@ export default {
       newTodo: ''
     }
   },
-  methods: {
-    addTodo() {
-      if(this.newTodo ==='') return;
-      const todos = JSON.parse(localStorage.getItem('todos')) || [];
-      todos.push(this.newTodo);
-      localStorage.setItem('todos', JSON.stringify(todos));
-      this.newTodo = '';
+  methods:{
+      addTodo(){
+        if(this.newTodo==='')return;
+        const todos=JSON.parse(localStorage.getItem('todos'))||[];
+        todos.push(this.newTodo);
+        localStorage.setItem('todos',JSON.stringify(todos));
+        this.newTodo='';
+      }
     }
   }
-}
 </script>
