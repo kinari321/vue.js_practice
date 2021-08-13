@@ -14,3 +14,6 @@
 
 ### axios-learning
 - 参照：[vue-cliでaxiosを使用する(設定から使用方法まで) - Qiita](https://qiita.com/right1121/items/092ac7ff747e1c47b2b1)
+
+### golang-echo
+- 参照：[Go + Vue.js でGETとPOSTをやってみる - Qiita](https://qiita.com/SY-BETA/items/e57446ffa4269376e699)
