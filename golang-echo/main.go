@@ -12,6 +12,10 @@ func main() {
 	//CORSの設定(vueのプロジェクトをGOで立てたlocalサーバーで起動する時は不要)
 	e.Use(middleware.CORS())
 
+	// npm run buildでビルドしたものをgoで起動  corsも不要になる
+	//  /でアクセスしたときのルーティング設定
+	// e.Static("/", "dist/")
+
 	// リクエストに対するHandler
 	e.GET("/getTitle", getTitle)
 	e.GET("/getName/:name", getName)
