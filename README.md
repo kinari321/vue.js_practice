@@ -10,6 +10,8 @@
 
 ### udemy-vuejs
 
+### udemy-vuejs-axios
+
 - 参照：[超Vue.js 2 完全パック (Vue Router, Vuex含む)](https://www.udemy.com/course/vue-js-complete-guide/)
 
 ### todo
