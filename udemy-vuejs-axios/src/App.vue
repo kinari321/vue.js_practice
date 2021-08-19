@@ -25,12 +25,40 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
       name: '',
       comment: '',
     };
+  },
+  methods: {
+    createComment() {
+      axios
+        .post(
+          'https://firestore.googleapis.com/v1/projects/vuejs-http-d7b52/databases/(default)/documents/comments',
+          {
+            fields: {
+              name: {
+                stringValue: this.name,
+              },
+              comment: {
+                stringValue: this.comment,
+              },
+            },
+          },
+        )
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.name = '';
+      this.comment = '';
+    },
   },
 };
 </script>
