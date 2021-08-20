@@ -20,6 +20,14 @@
       >
       </textarea>
       <h2>掲示板</h2>
+      <div
+        v-for="post in posts"
+        :key="post.name"
+      >
+      <br>
+      <div>名前：{{ post.fields.name.stringValue}}</div>
+      <div>コメント：{{ post.fields.comment.stringValue }}</div>
+      </div>
     <router-view/>
   </div>
 </template>
@@ -32,13 +40,24 @@ export default {
     return {
       name: '',
       comment: '',
+      data: [],
     };
+  },
+  created() {
+    axios
+      .get(
+        '/comments',
+      )
+      .then((response) => {
+        this.posts = response.data.documents;
+        console.log(response);
+      });
   },
   methods: {
     createComment() {
       axios
         .post(
-          'https://firestore.googleapis.com/v1/projects/vuejs-http-d7b52/databases/(default)/documents/comments',
+          '/comments',
           {
             fields: {
               name: {
@@ -49,13 +68,7 @@ export default {
               },
             },
           },
-        )
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        );
       this.name = '';
       this.comment = '';
     },
