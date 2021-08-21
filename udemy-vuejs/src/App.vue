@@ -1,29 +1,29 @@
 <template>
-<div>
-   <LikeHeader></LikeHeader>
-   <h2>{{ number }}</h2>
-   <LikeNumber :totalNumber="number" @my-click="number = $event"></LikeNumber>
-   <LikeNumber :totalNumber="number"></LikeNumber>
-</div>
+  <div>
+    <nav>
+      <router-link
+        to="/"
+        active-class="link--active"
+        exact
+        class="link"
+      >Home</router-link>
+      <router-link
+          to="/users"
+          active-class="link--active"
+          exact
+          class="link"
+      >Users</router-link>
+    </nav>
+    <router-view></router-view>
+  </div>
 </template>
 
-<script>
-import LikeHeader from "./components/LikeHeader.vue";
-
-export default {
-  data() {
-    return{
-      number: 14
-    }
-  },
-  components: {
-    LikeHeader: LikeHeader
-  }
-};
-</script>
-
 <style scoped>
-div {
-  border: 1px solid blue;
+.link {
+  margin-right: 10px;
+}
+
+.link--active {
+  font-size: 20px;
 }
 </style>
