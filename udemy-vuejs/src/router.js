@@ -34,5 +34,15 @@ export default new Router({
         { path: "profile", component: UsersProfile, name: "users-id-profile" },
       ]
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash){
+      return {
+        selector: to.hash
+      };
+    }
+  },
 }) ;
