@@ -38,14 +38,14 @@ export default new Router({
       ]
     }
   ],
-  scrollBehavior(to, from, savedPosition) {
-    if (savedPosition) {
-      return savedPosition;
-    }
-    if (to.hash){
-      return {
-        selector: to.hash
-      };
-    }
-  },
+  // scrollBehavior(to, from, savedPosition) {
+  //   if (savedPosition) {
+  //     return savedPosition;
+  //   }
+  //   if (to.hash){
+  //     return {
+  //       selector: to.hash
+  //     };
+  //   }
+  // },
 }) ;
