@@ -9,8 +9,8 @@
 <script>
 export default {
   computed: {
-    count() {
-      return this.$store.state.count
+    doubleCount() {
+      return this.$store.state.getters.doubleCount;
     }
   },
   methods: {
